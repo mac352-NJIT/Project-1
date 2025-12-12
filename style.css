@@ -2,3 +2,49 @@
     display: inline-flex;
     align-items: end;
 }
+.collapse-navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.collapse-navbar-collapse .navbar-nav .nav-item {
+    margin: 10px 0;
+}
+.collapse-navbar-collapse .navbar-nav .nav-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.collapse-navbar-collapse .navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+.collapse-navbar-collapse .navbar-nav .nav-link.active::before {
+    content: "•";
+    margin-right: 5px;
+}
+.collapse-navbar-collapse .navbar-nav .nav-link.active::after {
+    content: "•";
+    margin-left: 5px;
+}
+.collapse-navbar-collapse .navbar-nav .nav-link.active:hover {
+    text-decoration: none;
+}
+.collapse-navbar-collapse .navbar-nav .nav-link.active:hover::before {
+    content: "•";
+    margin-right: 5px;
+}
+
+.collapse-navbar-collapse .navbar-nav .nav-link.active:hover::after {
+    content: "•";
+    margin-left: 5px;
+}
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+footer p {
+    color: #555;
+    margin: 0;
+}
