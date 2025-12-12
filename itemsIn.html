@@ -61,12 +61,11 @@
   </nav>
 </header>
 <br>
-<div>
+<div class="container mb-5">
     <h2>Items Available</h2>
     
     <p>Browse through the list of items currently available for purchase.</p>
-    <div class="row">
-        <!-- Item cards will be dynamically inserted here -->
+    <div clas="row">
         <div class="alert alert-success" role="alert">
         These items are currently in stock and ready for immediate shipping.
     </div>
@@ -80,12 +79,12 @@
             </div>
             <img src="bambooCharger.jpg" class="card-img-top p-3" alt="Product Image" style="height: 200px; object-fit: contain;">
             <div class="card-body">
-              <h5 class="card-title">Bamboo Keyboard</h5>
+              <h5 class="card-title">Bamboo Charger</h5>
               <p class="card-text">Wireless, biodegradable keyboard. Perfect for the eco-friendly office.</p>
               <h5 class="text-primary">$45.00</h5>
             </div>
             <div class="card-footer bg-transparent border-top-0">
-              <button class="btn btn-primary w-100">Add to Cart</button>
+              <button class="btn btn-primary w-100" onclick="addToCart('Bamboo Keyboard', 45.00, 'bambooCharger.jpg')">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -99,11 +98,11 @@
               <h5 class="text-primary">$30.00</h5>
             </div>
             <div class="card-footer bg-transparent border-top-0">
-              <button class="btn btn-primary w-100">Add to Cart</button>
+              <button class="btn btn-primary w-100" onclick="addToCart('Solar Charger', 30.00, 'solarCharger.jpg')">Add to Cart</button>
             </div>
           </div>
         </div>
-
+ 
         <div class="col">
           <div class="card h-100 shadow-sm">
             <img src="gamingChair.jpg" class="card-img-top p-3" alt="Product Image" style="height: 200px; object-fit: contain;">
@@ -113,7 +112,7 @@
               <h5 class="text-primary">$129.00</h5>
             </div>
             <div class="card-footer bg-transparent border-top-0">
-              <button class="btn btn-primary w-100">Add to Cart</button>
+              <button class="btn btn-primary w-100" onclick="addToCart('Gaming Chair', 129.00, 'gamingChair.jpg')">Add to Cart</button>
             </div>
           </div>
         </div>
