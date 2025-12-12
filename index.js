@@ -160,3 +160,47 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCart();      
     loadCheckout();  
 });
+
+//Button Function
+
+document.addEventListnern('DOMContentLoaded', () => {
+    const buttonfunction = document.querySelectorAll('#fullScaleSale .add-to-car');
+
+    buttonfunction.foreEach(button => {
+        button.addEventListener('click', async () => {
+            const productId = button.dataset.id;
+            const title = button.dataset.title;
+            const price = button.dataset.price;
+            const img = button.dataset.img;
+
+            const res = await fetch('/api/decrement-stock', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ productId })
+                });
+
+            const data = await res.json();
+
+            const badge = document.getElementByClassName('btn btn-primary')
+            badge.textContent = data.stock;
+
+            if (data.stock === 0) {
+                button.disabled = true;
+                button.textContent = 'Out of Stock';
+                button.classList.remove('btn-primary');
+                button.classList.add('btn-secondary');
+            }
+
+            let shoppingcart = JSON.parse(localStorage.getItem('cart'));
+
+            const existingItem = cart.find(item => item.id = productId);
+            if (existingItem) {
+                existingItem.quantity -= 1;
+
+            }
+
+            localStorage.setitem('cart', JSON.stringify(cart));
+
+            alert('${title} added to cart!');
+
+            });
+        });
+    });
